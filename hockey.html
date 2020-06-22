@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div><ul class="names"></ul></div>
+
+    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    
+    <script>
+       
+       let fullTeam = {};
+       const team = [];
+        $(function(){
+            
+            const hockeyApp = {};
+            
+            
+            //set up the API
+            function teamRoster(team){
+                return $.ajax({
+                    url: `https://statsapi.web.nhl.com/api/v1/teams/${team}`,
+                    method: 'GET',
+                    dataType: 'json'
+                })
+            }
+            
+
+            
+
+            // iterate through the team roster numbers
+
+            for (let i = 1; i <= 58; i++) {
+                team.push(teamRoster(i));
+            }
+
+            // get the team information from the array of promises
+            $.when(...team)
+                .then( (...teamNames) => {
+                    const teams = teamNames.map( (name) => {
+                        return name[0];
+                });
+
+
+            // for each active team print the team names in a list.
+                teams.forEach( (teamName) => {
+
+                    class Teamz {
+                        constructor(){
+                            //maybe make these an object and try to put it in there
+                        this.name = teamName.teams[0].name,
+                        this.id = teamName.teams[0].id
+                        team.push(Teamz);
+                        }
+                    }
+
+                    fullTeam = new Teamz;
+
+                    if (teamName.teams[0].active === true) {
+                        $('.names').append(`<button class='teamName'> ${fullTeam.name}  <span> ${fullTeam.id}</span> </button>`);
+                    }
+                     
+                })
+            
+            });
+
+            const teamId = $('span').text();
+
+            function getPlayers(teams){
+                return $.ajax({
+                    url: `https://statsapi.web.nhl.com/api/v1/teams/${teams}/roster`,
+                    method: 'GET',
+                    dataType: 'json'
+                })
+            }
+
+            getPlayers(4);
+
+            $('.names').on('click', '.teamName', function(){
+                console.log(this.innerText);
+                console.log(getPlayers(4))
+            })
+
+
+            
+            
+            
+        });
+    </script>
+
+
+</body>
+</html>
