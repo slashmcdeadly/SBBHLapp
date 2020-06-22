@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/SBBHLapp/static/css/main.5f361e03.chunk.css",
+    "main.js": "/SBBHLapp/static/js/main.15e04a49.chunk.js",
+    "main.js.map": "/SBBHLapp/static/js/main.15e04a49.chunk.js.map",
+    "runtime-main.js": "/SBBHLapp/static/js/runtime-main.22660e89.js",
+    "runtime-main.js.map": "/SBBHLapp/static/js/runtime-main.22660e89.js.map",
+    "static/js/2.deb36cbb.chunk.js": "/SBBHLapp/static/js/2.deb36cbb.chunk.js",
+    "static/js/2.deb36cbb.chunk.js.map": "/SBBHLapp/static/js/2.deb36cbb.chunk.js.map",
+    "index.html": "/SBBHLapp/index.html",
+    "precache-manifest.c9e315b14b12b43e67b4fef6b5b930e7.js": "/SBBHLapp/precache-manifest.c9e315b14b12b43e67b4fef6b5b930e7.js",
+    "service-worker.js": "/SBBHLapp/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/SBBHLapp/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.deb36cbb.chunk.js.LICENSE.txt": "/SBBHLapp/static/js/2.deb36cbb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.22660e89.js",
+    "static/js/2.deb36cbb.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.15e04a49.chunk.js"
+  ]
+}
